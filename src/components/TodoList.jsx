@@ -15,7 +15,7 @@ const TodoTask = (props) => {
         data-cy="todo-task__button-update"
         onClick={() => {}}
       >
-        Update
+        Edit
       </Button>
       <Button
         type="primary"
