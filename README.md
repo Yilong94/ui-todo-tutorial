@@ -153,7 +153,7 @@ npm run deploy
 
 - Go to project setting and on the left navbar, click on _Secrets_
 - On the top, click on _New secret_
-- Under _Name_, enter ‘DEPLOY*ACCESS_TOKEN’ and under \_Value*, key in the access token you have saved earlier
+- Under _Name_, enter ‘DEPLOY_ACCESS_TOKEN’ and under _Value_, key in the access token you have saved earlier
 
 ![add personal access token as secret](assets/images/add-personal-access-token-as-secret.png)
 
