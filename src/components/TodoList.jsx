@@ -1,21 +1,42 @@
-import React, { useContext, useEffect } from "react";
-import { Button } from "antd";
+import React, { useContext, useEffect, useState } from "react";
+import { Input, Button } from "antd";
 import { TodoContext } from "../context/TodoContextProvider";
 import { deleteTodo, setTodos, updateTodo } from "../context/todo.actions";
 import { firebaseApi } from "../services/firebaseApi";
 
 const TodoTask = (props) => {
+  const [updatedValue, setUpdatedValue] = useState(props.description);
+  const [isUpdating, setUpdating] = useState(false);
+
+  const onUpdate = () => {
+    if (isUpdating) {
+      props.update(props.id, updatedValue);
+    }
+
+    setUpdating(!isUpdating);
+  };
+
   return (
     <div className="todo-task">
       <div className="todo-task__name" data-cy="todo-task__name">
         {props.description}
       </div>
+      {isUpdating && (
+        <Input
+          value={updatedValue}
+          onChange={({ target: { value } }) => setUpdatedValue(value)}
+          placeholder="Update a TODO"
+          size="large"
+          className="todo-task__input"
+          data-cy="todo-task__input"
+        />
+      )}
       <Button
         type="primary"
         shape="round"
         className="todo-task__button"
         data-cy="todo-task__button-update"
-        onClick={() => {}}
+        onClick={() => onUpdate()}
       >
         Edit
       </Button>
