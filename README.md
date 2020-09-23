@@ -129,7 +129,7 @@ An interactive window will appear. Click on the test you want to run.
 
 ### Manual Deployment
 
-Run the following and see your changes go live on your Github page. The URL to your Github page should be: _https://\<your-github-username\>.github.io/ui-todo_
+Run the following and see your changes go live on your Github page. The URL to your Github page should be: _https://\<your-github-username\>.github.io/ui-todo-tutorial_
 
 ```
 npm run deploy
