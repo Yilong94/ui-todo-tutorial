@@ -45,6 +45,7 @@ const TodoTask = (props) => {
         shape="round"
         className="todo-task__button"
         data-cy="todo-task__button-delete"
+        disabled={isUpdating}
         onClick={() => props.delete(props.id)}
       >
         Delete
